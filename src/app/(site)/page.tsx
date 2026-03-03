@@ -278,17 +278,17 @@ export default async function HomePage() {
       <section className="py-20 lg:py-28 bg-[#4935BA]">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl sm:text-4xl font-bold text-white">
-            {pageData.ctaSection.heading}
+            {pageData.ctaSection?.heading ?? fallbackData.ctaSection.heading}
           </h2>
           <p className="mt-6 text-lg text-white/80 max-w-2xl mx-auto">
-            {pageData.ctaSection.description}
+            {pageData.ctaSection?.description ?? fallbackData.ctaSection.description}
           </p>
           <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
             <Link
-              href={pageData.ctaSection.buttonLink}
+              href={pageData.ctaSection?.buttonLink ?? fallbackData.ctaSection.buttonLink}
               className="inline-flex items-center justify-center rounded-full bg-white text-[#4935BA] px-8 py-3.5 text-base font-semibold hover:bg-gray-100 transition-colors"
             >
-              {pageData.ctaSection.buttonText}
+              {pageData.ctaSection?.buttonText ?? fallbackData.ctaSection.buttonText}
               <ArrowRight className="ml-2 h-5 w-5" />
             </Link>
           </div>
